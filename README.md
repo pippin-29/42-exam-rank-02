@@ -3,6 +3,6 @@
 These are some questions i have attempted in preparation for the weekly exam at 42 School
 
 They are not in order of difficulty,
-And are no longer an accurate representation of the current exam...
+And may not be an accurate representation of the current exam...
 
 Thanks for looking!
