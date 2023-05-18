@@ -1,37 +1,49 @@
 #include <unistd.h>
 
-void repeat_alpha(char a)
+void ft_putchar(char c)
 {
-	char i = a;
-	if (i >= 'a' && i <= 'z')
-		i -= 96;
-	if (i >= 'A' && i <= 'Z')
-		i -= 64;
-	while (i)
+	write (1, &c, 1);
+}
+
+void repeat_alpha_print(char *s)
+{
+	int i = 0;
+	int d = 0;
+
+	while (s[i])
 	{
-		if ((a >= 'a' && a <= 'z') || (a >= 'A' && a <= 'Z'))
-			write (1, &a, 1);
-		i--;
+		if (s[i] >= 'A' && s[i] <= 'Z')
+		{
+			d = s[i];
+			while (d - 64)
+			{
+				ft_putchar(s[i]);
+				d--;
+			}
+		}
+		else if (s[i] >= 'a' && s[i] <= 'z')
+		{
+			d = s[i];
+			while (d - 96)
+			{
+				ft_putchar(s[i]);
+				d--;
+			}
+		}
+		else
+		{
+			ft_putchar(s[i]);
+		}
+		i++;
 	}
 }
 
 int main (int argc, char **argv)
 {
-
-	int i = 0;
-
-	if (argc != 2)
-		write(1, "\n", 1);
-	else
+	if (argc == 2)
 	{
-		while (argv[1][i] != '\0')
-		{
-			if ((argv[1][i] >= 'a' && argv[1][i] <= 'z') || (argv[1][i] >= 'A' && argv[1][i] <= 'Z'))
-				repeat_alpha(argv[1][i]);
-			else
-				write (1, &argv[1][i], 1);
-			i++;
-		}
-		write(1, "\n", 1);
+		repeat_alpha_print(argv[1]);
 	}
+	write (1, "\n", 1);
+	return (0);
 }
