@@ -7,6 +7,6 @@ And may not be an accurate representation of the current exam...
 
 This is the program i used in preparation.
 
-bash -c "$(curl https://grademe.fr)" --> Visit Grademe.fr
+`` bash -c "$(curl https://grademe.fr)" `` --> Visit Grademe.fr
 
 Thanks for looking!
